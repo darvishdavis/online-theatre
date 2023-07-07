@@ -1,0 +1,19 @@
+{% extends "common.html" %}
+{% block body %}
+<title>ADD</title>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <br><br>
+    <label>Movie Title</label><br>
+    <input type="text" name="title"><br>
+    <label>Movie Description</label><br>
+    <input type="text" name="description"><br>
+    <label>Release Year</label><br>
+    <input type=number name="year"><br>
+    <label>Movie Poster</label><br>
+    <input type="file" name="image"><br>
+    <br>
+    <input type="submit" value="ADD"><br>
+
+</form>
+{% endblock %}

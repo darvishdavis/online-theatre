@@ -1,0 +1,27 @@
+{% extends "common.html" %}
+{% block body %}
+
+<title>DETAILS</title>
+<div class="container">
+    <div class="row">
+        {% for i in movie_dictionary %}
+            {% if i.id == id %}
+                <div class="col-12 col-sm-6 ">
+                    <img src="{{ i.image.url }}"  width="500" height="500" style="margin:5%">
+                </div>
+                <div class="col-12 col-sm-6 text-md-center" >
+                    <div style="margin:5%">
+                        <h1>{{ i.title }}</h1><br>
+                        <h5>{{ i.description }}</h5><br>
+                        <h3>{{ i.year }}</h3><br><br><br>
+                        <a class="btn btn " style="background-color:rgb(255, 95, 31)" href="{% url 'movie-app-1:delete' i.id %}">DELETE</a>
+                        <a class="btn btn " style="background-color:rgb(255, 95, 31)" href="{% url 'movie-app-1:edit' i.id %}">EDIT</a><br><br>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

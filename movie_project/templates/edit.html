@@ -1,0 +1,20 @@
+{% extends "common.html" %}
+{% block body %}
+
+<title>EDIT</title>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+    <br><br>
+    <label>Movie Title</label><br>
+    <input type="text" name="title" value="{{old.title}}"><br>
+    <label>Movie Description</label><br>
+    <input type="text" name="description" value="{{old.description}}"><br>
+    <label>Release Year</label><br>
+    <input type=number name="year" value="{{old.year}}"><br>
+    <label>Movie Poster</label><br>
+    <input type="file" name="image" ><br>
+    <label>currently :{{old.image}}</label><br>
+    <br>
+    <input class="btn btn-dark " type="submit" value="SAVE CHANGES"><br>
+</form>
+{% endblock %}
