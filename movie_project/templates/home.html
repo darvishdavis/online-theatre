@@ -2,22 +2,21 @@
 {% block body %}
 
 <title>HOME</title>
-<div class="container">
+<div class="container-fluid">
     <div  class="row">
         {% for i in movie_dictionary %}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 " style="margin:13px" >
-                <div class="card" style="width:125%;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 m-3 ">
+            <div>
+                <div class="card" style="width:15rem">
                     <img class="card-img-top" src="{{ i.image.url }}" alt=" {{ i.title }} image " width="100" height="200"><br>
-                    <div class="card-body" style="background-color:grey">
-                        <a href="{% url 'movie-app-1:details' i.id %}" class="btn btn-dark">DETAILS</a>
+                    <div class="card-body" style="background-color:white">
+                        <a href="{% url 'movie-app-1:details' i.id %}" class="btn btn-dark mx-5 my-1">DETAILS</a>
                     </div>
                 </div>
             </div>
+        </div>
         {% endfor %}
     </div>
-</div>
-<div class="container">
-    <a class="btn d-flex flex-column " style="background-color:rgb(255, 95, 31)" href="{% url 'movie-app-1:add' %}">+</a>
 </div>
 
 {% endblock %}
