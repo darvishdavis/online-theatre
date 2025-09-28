@@ -77,9 +77,13 @@ WSGI_APPLICATION = 'movie_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'movies',
-        'USER': 'root',
-        'PASSWORD': '',
+        'NAME': 'emovie_db',       # MYSQL_DATABASE : old value - movies
+        'USER': 'emovie_user',     # MYSQL_USER : old value - root
+        "PASSWORD": "Emovie,343!",   # MYSQL_PASSWORD
+        "HOST": "127.0.0.1",
+        "PORT": "3306",  # or 3307 if you remapped
+        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
+
     }
 }
 
